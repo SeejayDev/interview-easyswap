@@ -119,7 +119,7 @@ export default function HomeSwapForm() {
         setAmount={(v) => setUserInput({ source: "to", amount: v })}
       />
 
-      {fromKey === toKey && (
+      {fromKey && fromKey === toKey && (
         <div className="mt-3 bg-yellow-300/30 rounded-lg p-3 flex items-center">
           <AlertTriangleIcon className="size-5 text-yellow-600 shrink-0" />
           <span className="text-xs sm:text-sm font-medium ml-2">
