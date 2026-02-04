@@ -24,3 +24,9 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+select {
+  appearance: none; /* modern browsers */
+  -webkit-appearance: none; /* Safari, Chrome */
+  -moz-appearance: none; /* Firefox */
+}
