@@ -1,5 +1,5 @@
 import { useQueryState } from "nuqs";
-import { useMemo } from "react";
+import { useCallback, useMemo } from "react";
 
 export function useSearchQueryState(name: string, initialValue: string) {
   const [localState, setLocalState] = useQueryState(name);
@@ -8,9 +8,9 @@ export function useSearchQueryState(name: string, initialValue: string) {
     return localState ?? initialValue;
   }, [localState]);
 
-  function setState(value: string) {
+  const setState = useCallback((value: string) => {
     setLocalState(value ? value : null);
-  }
+  }, []);
 
   return [state, setState] as const;
 }
